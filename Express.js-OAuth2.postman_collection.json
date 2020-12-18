@@ -1,0 +1,1440 @@
+{
+	"info": {
+		"_postman_id": "487ac4a9-4bea-437f-bf82-d45ba174bf09",
+		"name": "Express.js-OAuth2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "API",
+			"item": [
+				{
+					"name": "V1",
+					"item": [
+						{
+							"name": "User",
+							"item": [
+								{
+									"name": "Create User",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{JWT}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"email\": \"kokoskun@gmail.com\",\n    \"password\": \"123456\",\n    \"first_name\": \"Patipan\",\n    \"last_name\": \"Nakarin\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{URL}}/api/v1/user",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"user"
+											]
+										},
+										"description": "api/v1/user\r\n<table>\r\n  <caption><b><center>Headers</center></b></caption>\r\n  <hr>\r\n\t<tr>\r\n\t\t<th>Property</th>\r\n\t\t<th>Type</th>\r\n\t\t<th>Required</th>\r\n\t\t<th>Description</th>\r\n\t</tr>\r\n    <tr>\r\n\t\t<td>Content-Type</td>\r\n\t\t<td>String</td>\r\n\t\t<td>Required</td>\r\n\t\t<td>application/json</td>\r\n\t</tr>\r\n    <tr>\r\n\t\t<td>Authorization</td>\r\n\t\t<td>String</td>\r\n\t\t<td>Required</td>\r\n\t\t<td>Bearer {{JWT}}</td>\r\n\t</tr>\r\n</table>\r\n<table>\r\n  <caption><b><center>Body</center></b></caption>\r\n  <hr>\r\n\t<tr>\r\n\t\t<th>Property</th>\r\n\t\t<th>Type</th>\r\n\t\t<th>Required</th>\r\n\t\t<th>Description</th>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>email</td>\r\n\t\t<td>String</td>\r\n\t\t<td>Required</td>\r\n\t\t<td>Email/Value</td>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>password</td>\r\n\t\t<td>String</td>\r\n\t\t<td>Required</td>\r\n\t\t<td>Password/Value</td>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>first_name</td>\r\n\t\t<td>String</td>\r\n\t\t<td>Optional</td>\r\n\t\t<td>First Name/Value</td>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>last_name</td>\r\n\t\t<td>String</td>\r\n\t\t<td>Optional</td>\r\n\t\t<td>Last Name/Value</td>\r\n\t</tr>\r\n</table>"
+									},
+									"response": [
+										{
+											"name": "200 Succeed",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer {{JWT}}",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n\t\"email\": \"kokoskun.apple@gmail.com\",\n    \"password\": \"123456\",\n    \"first_name\": \"Patipan\",\n    \"last_name\": \"Nakarin\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{URL}}/api/v1/user",
+													"host": [
+														"{{URL}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"user"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "100"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "98"
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 18 Dec 2020 09:20:18 GMT"
+												},
+												{
+													"key": "X-RateLimit-Reset",
+													"value": "1608283662"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "http://localhost:8081"
+												},
+												{
+													"key": "Vary",
+													"value": "Origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "37"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"25-raKILTTzHSwFBXqJHzQP3044FRw\""
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"result\": \"success\",\n    \"json\": {\n        \"id\": 57\n    }\n}"
+										},
+										{
+											"name": "401 Unauthorized",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer {{JWT}}",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n\t\"email\": \"kokoskun@gmail.com\",\n    \"password\": \"123456\",\n    \"first_name\": \"Patipan\",\n    \"last_name\": \"Nakarin\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{URL}}/api/v1/user",
+													"host": [
+														"{{URL}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"user"
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "100"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "89"
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 18 Dec 2020 09:26:33 GMT"
+												},
+												{
+													"key": "X-RateLimit-Reset",
+													"value": "1608283662"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "http://localhost:8081"
+												},
+												{
+													"key": "Vary",
+													"value": "Origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "43"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"2b-nivPG206NFfDpm7JnpLyTO1resU\""
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"result\": \"error\",\n    \"message\": \"Unauthorized\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Update User By ID",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{JWT}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"email\": \"kokoskun@gmail.com\",\n    \"password\": \"123456\",\n    \"first_name\": \"Patipan\",\n    \"last_name\": \"Nakarin\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{URL}}/api/v1/user/{{id}}",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"user",
+												"{{id}}"
+											]
+										},
+										"description": "api/v1/user/{{id}}\r\n<table>\r\n\t<tr>\r\n\t\t<th>Property</th>\r\n\t\t<th>Type</th>\r\n\t\t<th>Required</th>\r\n\t\t<th>Description</th>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>id</td>\r\n\t\t<td>Integer</td>\r\n\t\t<td>Required</td>\r\n\t\t<td>ID/Value</td>\r\n\t</tr>\r\n</table>\r\n<table>\r\n  <caption><b><center>Headers</center></b></caption>\r\n  <hr>\r\n\t<tr>\r\n\t\t<th>Property</th>\r\n\t\t<th>Type</th>\r\n\t\t<th>Required</th>\r\n\t\t<th>Description</th>\r\n\t</tr>\r\n    <tr>\r\n\t\t<td>Content-Type</td>\r\n\t\t<td>String</td>\r\n\t\t<td>Required</td>\r\n\t\t<td>application/json</td>\r\n\t</tr>\r\n    <tr>\r\n\t\t<td>Authorization</td>\r\n\t\t<td>String</td>\r\n\t\t<td>Required</td>\r\n\t\t<td>Bearer {{JWT}}</td>\r\n\t</tr>\r\n</table>\r\n<table>\r\n  <caption><b><center>Body</center></b></caption>\r\n  <hr>\r\n\t<tr>\r\n\t\t<th>Property</th>\r\n\t\t<th>Type</th>\r\n\t\t<th>Required</th>\r\n\t\t<th>Description</th>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>email</td>\r\n\t\t<td>String</td>\r\n\t\t<td>Optional</td>\r\n\t\t<td>Email/Value</td>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>password</td>\r\n\t\t<td>String</td>\r\n\t\t<td>Optional</td>\r\n\t\t<td>Password/Value</td>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>first_name</td>\r\n\t\t<td>String</td>\r\n\t\t<td>Optional</td>\r\n\t\t<td>First Name/Value</td>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>last_name</td>\r\n\t\t<td>String</td>\r\n\t\t<td>Optional</td>\r\n\t\t<td>Last Name/Value</td>\r\n\t</tr>\r\n</table>"
+									},
+									"response": [
+										{
+											"name": "200 Succeed",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer {{JWT}}",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"password\": \"1234567\",\n    \"first_name\": \"PatipaN\",\n    \"last_name\": \"NakariN\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{URL}}/api/v1/user/57",
+													"host": [
+														"{{URL}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"user",
+														"57"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "100"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "96"
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 18 Dec 2020 09:22:15 GMT"
+												},
+												{
+													"key": "X-RateLimit-Reset",
+													"value": "1608283662"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "http://localhost:8081"
+												},
+												{
+													"key": "Vary",
+													"value": "Origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "117"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"75-zDkWkBOhrUYQQOjZyZulrQI/6Lc\""
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"result\": \"success\",\n    \"json\": {\n        \"id\": 57,\n        \"email\": \"kokoskun.apple@gmail.com\",\n        \"first_name\": \"PatipaN\",\n        \"last_name\": \"NakariN\"\n    }\n}"
+										},
+										{
+											"name": "401 Unauthorized",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer {{JWT}}",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n\t\"email\": \"kokoskun@gmail.com\",\n    \"password\": \"123456\",\n    \"first_name\": \"Patipan\",\n    \"last_name\": \"Nakarin\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{URL}}/api/v1/user/{{id}}",
+													"host": [
+														"{{URL}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"user",
+														"{{id}}"
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "100"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "88"
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 18 Dec 2020 09:26:53 GMT"
+												},
+												{
+													"key": "X-RateLimit-Reset",
+													"value": "1608283662"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "http://localhost:8081"
+												},
+												{
+													"key": "Vary",
+													"value": "Origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "43"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"2b-nivPG206NFfDpm7JnpLyTO1resU\""
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"result\": \"error\",\n    \"message\": \"Unauthorized\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Find All User",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{JWT}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{URL}}/api/v1/user?email=kokoskun",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"user"
+											],
+											"query": [
+												{
+													"key": "email",
+													"value": "kokoskun",
+													"description": "Email/Value"
+												},
+												{
+													"key": "first_name",
+													"value": "P",
+													"description": "First Name/Value",
+													"disabled": true
+												},
+												{
+													"key": "last_name",
+													"value": null,
+													"description": "Last Name/Value",
+													"disabled": true
+												}
+											]
+										},
+										"description": "api/v1/user\r\n<table>\r\n  <caption><b><center>Headers</center></b></caption>\r\n  <hr>\r\n\t<tr>\r\n\t\t<th>Property</th>\r\n\t\t<th>Type</th>\r\n\t\t<th>Required</th>\r\n\t\t<th>Description</th>\r\n\t</tr>\r\n    <tr>\r\n\t\t<td>Content-Type</td>\r\n\t\t<td>String</td>\r\n\t\t<td>Required</td>\r\n\t\t<td>application/json</td>\r\n\t</tr>\r\n    <tr>\r\n\t\t<td>Authorization</td>\r\n\t\t<td>String</td>\r\n\t\t<td>Required</td>\r\n\t\t<td>Bearer {{JWT}}</td>\r\n\t</tr>\r\n</table>\r\n<table>\r\n  <caption><b><center>Params</center></b></caption>\r\n  <hr>\r\n\t<tr>\r\n\t\t<th>Property</th>\r\n\t\t<th>Type</th>\r\n\t\t<th>Required</th>\r\n\t\t<th>Description</th>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>email</td>\r\n\t\t<td>String</td>\r\n\t\t<td>Optional</td>\r\n\t\t<td>Email/Value</td>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>first_name</td>\r\n\t\t<td>String</td>\r\n\t\t<td>Optional</td>\r\n\t\t<td>First Name/Value</td>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>last_name</td>\r\n\t\t<td>String</td>\r\n\t\t<td>Optional</td>\r\n\t\t<td>Last Name/Value</td>\r\n\t</tr>\r\n</table>"
+									},
+									"response": [
+										{
+											"name": "200 Succeed",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer {{JWT}}",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "{{URL}}/api/v1/user?email=kokoskun",
+													"host": [
+														"{{URL}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"user"
+													],
+													"query": [
+														{
+															"key": "email",
+															"value": "kokoskun",
+															"description": "Email/Value"
+														},
+														{
+															"key": "first_name",
+															"value": "P",
+															"description": "First Name/Value",
+															"disabled": true
+														},
+														{
+															"key": "last_name",
+															"value": null,
+															"description": "Last Name/Value",
+															"disabled": true
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "100"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "95"
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 18 Dec 2020 09:23:28 GMT"
+												},
+												{
+													"key": "X-RateLimit-Reset",
+													"value": "1608283662"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "http://localhost:8081"
+												},
+												{
+													"key": "Vary",
+													"value": "Origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "222"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"de-to4SG5AJAllUE89oTaiNeLpgXVc\""
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"result\": \"success\",\n    \"json\": {\n        \"count\": 2,\n        \"data\": [\n            {\n                \"id\": 52,\n                \"email\": \"kokoskun@gmail.com\",\n                \"first_name\": \"Patipan\",\n                \"last_name\": \"Nakarin\"\n            },\n            {\n                \"id\": 57,\n                \"email\": \"kokoskun.apple@gmail.com\",\n                \"first_name\": \"PatipaN\",\n                \"last_name\": \"NakariN\"\n            }\n        ]\n    }\n}"
+										},
+										{
+											"name": "401 Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer {{JWT}}",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"url": {
+													"raw": "{{URL}}/api/v1/user?email=kokoskun",
+													"host": [
+														"{{URL}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"user"
+													],
+													"query": [
+														{
+															"key": "email",
+															"value": "kokoskun",
+															"description": "Email/Value"
+														},
+														{
+															"key": "first_name",
+															"value": "P",
+															"description": "First Name/Value",
+															"disabled": true
+														},
+														{
+															"key": "last_name",
+															"value": null,
+															"description": "Last Name/Value",
+															"disabled": true
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "100"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "87"
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 18 Dec 2020 09:27:14 GMT"
+												},
+												{
+													"key": "X-RateLimit-Reset",
+													"value": "1608283662"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "http://localhost:8081"
+												},
+												{
+													"key": "Vary",
+													"value": "Origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "43"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"2b-nivPG206NFfDpm7JnpLyTO1resU\""
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"result\": \"error\",\n    \"message\": \"Unauthorized\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Find User By ID",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{JWT}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{URL}}/api/v1/user/{{id}}",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"user",
+												"{{id}}"
+											]
+										},
+										"description": "api/v1/user/{{id}}\r\n<table>\r\n\t<tr>\r\n\t\t<th>Property</th>\r\n\t\t<th>Type</th>\r\n\t\t<th>Required</th>\r\n\t\t<th>Description</th>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>id</td>\r\n\t\t<td>Integer</td>\r\n\t\t<td>Required</td>\r\n\t\t<td>ID/Value</td>\r\n\t</tr>\r\n</table>\r\n<table>\r\n  <caption><b><center>Headers</center></b></caption>\r\n  <hr>\r\n\t<tr>\r\n\t\t<th>Property</th>\r\n\t\t<th>Type</th>\r\n\t\t<th>Required</th>\r\n\t\t<th>Description</th>\r\n\t</tr>\r\n    <tr>\r\n\t\t<td>Content-Type</td>\r\n\t\t<td>String</td>\r\n\t\t<td>Required</td>\r\n\t\t<td>application/json</td>\r\n\t</tr>\r\n    <tr>\r\n\t\t<td>Authorization</td>\r\n\t\t<td>String</td>\r\n\t\t<td>Required</td>\r\n\t\t<td>Bearer {{JWT}}</td>\r\n\t</tr>\r\n</table>"
+									},
+									"response": [
+										{
+											"name": "401 Unauthorized",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer {{JWT}}",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"url": {
+													"raw": "{{URL}}/api/v1/user/{{id}}",
+													"host": [
+														"{{URL}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"user",
+														"{{id}}"
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "100"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "86"
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 18 Dec 2020 09:27:31 GMT"
+												},
+												{
+													"key": "X-RateLimit-Reset",
+													"value": "1608283662"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "http://localhost:8081"
+												},
+												{
+													"key": "Vary",
+													"value": "Origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "43"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"2b-nivPG206NFfDpm7JnpLyTO1resU\""
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"result\": \"error\",\n    \"message\": \"Unauthorized\"\n}"
+										},
+										{
+											"name": "200 Succeed",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer {{JWT}}",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "{{URL}}/api/v1/user/57",
+													"host": [
+														"{{URL}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"user",
+														"57"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "100"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "93"
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 18 Dec 2020 09:24:27 GMT"
+												},
+												{
+													"key": "X-RateLimit-Reset",
+													"value": "1608283662"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "http://localhost:8081"
+												},
+												{
+													"key": "Vary",
+													"value": "Origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "117"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"75-zDkWkBOhrUYQQOjZyZulrQI/6Lc\""
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"result\": \"success\",\n    \"json\": {\n        \"id\": 57,\n        \"email\": \"kokoskun.apple@gmail.com\",\n        \"first_name\": \"PatipaN\",\n        \"last_name\": \"NakariN\"\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Delete User By ID",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{JWT}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{URL}}/api/v1/user/{{id}}",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"user",
+												"{{id}}"
+											]
+										},
+										"description": "api/v1/user/{{id}}\r\n<table>\r\n\t<tr>\r\n\t\t<th>Property</th>\r\n\t\t<th>Type</th>\r\n\t\t<th>Required</th>\r\n\t\t<th>Description</th>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>id</td>\r\n\t\t<td>Integer</td>\r\n\t\t<td>Required</td>\r\n\t\t<td>ID/Value</td>\r\n\t</tr>\r\n</table>\r\n<table>\r\n  <caption><b><center>Headers</center></b></caption>\r\n  <hr>\r\n\t<tr>\r\n\t\t<th>Property</th>\r\n\t\t<th>Type</th>\r\n\t\t<th>Required</th>\r\n\t\t<th>Description</th>\r\n\t</tr>\r\n    <tr>\r\n\t\t<td>Content-Type</td>\r\n\t\t<td>String</td>\r\n\t\t<td>Required</td>\r\n\t\t<td>application/json</td>\r\n\t</tr>\r\n    <tr>\r\n\t\t<td>Authorization</td>\r\n\t\t<td>String</td>\r\n\t\t<td>Required</td>\r\n\t\t<td>Bearer {{JWT}}</td>\r\n\t</tr>\r\n</table>"
+									},
+									"response": [
+										{
+											"name": "401 Unauthorized",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer {{JWT}}",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"url": {
+													"raw": "{{URL}}/api/v1/user/{{id}}",
+													"host": [
+														"{{URL}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"user",
+														"{{id}}"
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "100"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "99"
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 18 Dec 2020 09:27:43 GMT"
+												},
+												{
+													"key": "X-RateLimit-Reset",
+													"value": "1608284562"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "http://localhost:8081"
+												},
+												{
+													"key": "Vary",
+													"value": "Origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "43"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"2b-nivPG206NFfDpm7JnpLyTO1resU\""
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"result\": \"error\",\n    \"message\": \"Unauthorized\"\n}"
+										},
+										{
+											"name": "200 Succeed",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer {{JWT}}",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "{{URL}}/api/v1/user/57",
+													"host": [
+														"{{URL}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"user",
+														"57"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "100"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "92"
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 18 Dec 2020 09:24:57 GMT"
+												},
+												{
+													"key": "X-RateLimit-Reset",
+													"value": "1608283662"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "http://localhost:8081"
+												},
+												{
+													"key": "Vary",
+													"value": "Origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "11"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"b-qA97yBec1rrOyf2eVsYdWwFPOso\""
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"count\": 1\n}"
+										}
+									]
+								},
+								{
+									"name": "Delete All User",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{JWT}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{URL}}/api/v1/user",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"user"
+											]
+										},
+										"description": "api/v1/user\r\n<table>\r\n  <caption><b><center>Headers</center></b></caption>\r\n  <hr>\r\n\t<tr>\r\n\t\t<th>Property</th>\r\n\t\t<th>Type</th>\r\n\t\t<th>Required</th>\r\n\t\t<th>Description</th>\r\n\t</tr>\r\n    <tr>\r\n\t\t<td>Content-Type</td>\r\n\t\t<td>String</td>\r\n\t\t<td>Required</td>\r\n\t\t<td>application/json</td>\r\n\t</tr>\r\n    <tr>\r\n\t\t<td>Authorization</td>\r\n\t\t<td>String</td>\r\n\t\t<td>Required</td>\r\n\t\t<td>Bearer {{JWT}}</td>\r\n\t</tr>\r\n</table>"
+									},
+									"response": [
+										{
+											"name": "200 Succeed",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer {{JWT}}",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "{{URL}}/api/v1/user",
+													"host": [
+														"{{URL}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"user"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "100"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "91"
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 18 Dec 2020 09:25:44 GMT"
+												},
+												{
+													"key": "X-RateLimit-Reset",
+													"value": "1608283662"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "http://localhost:8081"
+												},
+												{
+													"key": "Vary",
+													"value": "Origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "11"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"b-qA97yBec1rrOyf2eVsYdWwFPOso\""
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"count\": 1\n}"
+										},
+										{
+											"name": "401 Unauthorized",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer {{JWT}}",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"url": {
+													"raw": "{{URL}}/api/v1/user",
+													"host": [
+														"{{URL}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"user"
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "100"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "98"
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 18 Dec 2020 09:27:59 GMT"
+												},
+												{
+													"key": "X-RateLimit-Reset",
+													"value": "1608284562"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "http://localhost:8081"
+												},
+												{
+													"key": "Vary",
+													"value": "Origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "43"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"2b-nivPG206NFfDpm7JnpLyTO1resU\""
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"result\": \"error\",\n    \"message\": \"Unauthorized\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Token",
+							"item": [
+								{
+									"name": "Token",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Basic ZDEzZDJhOGU4ZGI3NGQzOWIwMTc5ZmJiYTAzZWQ2MGM6MmI5MTkwNWYzNDdkMDc3NjczMDdlNDkxOTUwZmIxYjkyOTA3ZjllODBhMGZiZTQ3YjdiNTMwZWUzNmUzZGE0Zg",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "grant_type",
+													"value": "client_credentials",
+													"type": "text"
+												}
+											],
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{URL}}/api/v1/token",
+											"host": [
+												"{{URL}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"token"
+											]
+										},
+										"description": "api/v1/user\r\n<table>\r\n  <caption><b><center>Headers</center></b></caption>\r\n  <hr>\r\n\t<tr>\r\n\t\t<th>Property</th>\r\n\t\t<th>Type</th>\r\n\t\t<th>Required</th>\r\n\t\t<th>Description</th>\r\n\t</tr>\r\n    <tr>\r\n\t\t<td>Content-Type</td>\r\n\t\t<td>String</td>\r\n\t\t<td>Required</td>\r\n\t\t<td>application/json</td>\r\n\t</tr>\r\n</table>\r\n<table>\r\n  <caption><b><center>Body</center></b></caption>\r\n  <hr>\r\n\t<tr>\r\n\t\t<th>Property</th>\r\n\t\t<th>Type</th>\r\n\t\t<th>Required</th>\r\n\t\t<th>Description</th>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>email</td>\r\n\t\t<td>String</td>\r\n\t\t<td>Required</td>\r\n\t\t<td>Email/Value</td>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>password</td>\r\n\t\t<td>String</td>\r\n\t\t<td>Required</td>\r\n\t\t<td>Password/Value</td>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>first_name</td>\r\n\t\t<td>String</td>\r\n\t\t<td>Optional</td>\r\n\t\t<td>First Name/Value</td>\r\n\t</tr>\r\n\t<tr>\r\n\t\t<td>last_name</td>\r\n\t\t<td>String</td>\r\n\t\t<td>Optional</td>\r\n\t\t<td>Last Name/Value</td>\r\n\t</tr>\r\n</table>"
+									},
+									"response": [
+										{
+											"name": "403 Forbidden",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Basic ZDEzZDJhOGU4ZGI3NGQzOWIwMTc5ZmJiYTAzZWQ2MGM6MmI5MTkwNWYzNDdkMDc3NjczMDdlNDkxOTUwZmIxYjkyOTA3ZjllODBhMGZiZTQ3YjdiNTMwZWUzNmUzZGE0Zg",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "grant_type",
+															"value": "client_credentials",
+															"type": "text",
+															"disabled": true
+														}
+													],
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{URL}}/api/v1/token",
+													"host": [
+														"{{URL}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"token"
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "100"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "90"
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 18 Dec 2020 09:26:07 GMT"
+												},
+												{
+													"key": "X-RateLimit-Reset",
+													"value": "1608283662"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "http://localhost:8081"
+												},
+												{
+													"key": "Vary",
+													"value": "Origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "44"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"2c-0Gh6+4jSqRH7Lr1IWnHrQy1+yEs\""
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"result\": \"error\",\n    \"message\": \"Access Denied\"\n}"
+										},
+										{
+											"name": "200 Succeed",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Basic ZDEzZDJhOGU4ZGI3NGQzOWIwMTc5ZmJiYTAzZWQ2MGM6MmI5MTkwNWYzNDdkMDc3NjczMDdlNDkxOTUwZmIxYjkyOTA3ZjllODBhMGZiZTQ3YjdiNTMwZWUzNmUzZGE0Zg",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "grant_type",
+															"value": "client_credentials",
+															"type": "text"
+														}
+													],
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{URL}}/api/v1/token",
+													"host": [
+														"{{URL}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"token"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "X-RateLimit-Limit",
+													"value": "100"
+												},
+												{
+													"key": "X-RateLimit-Remaining",
+													"value": "99"
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 18 Dec 2020 09:18:27 GMT"
+												},
+												{
+													"key": "X-RateLimit-Reset",
+													"value": "1608283662"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "http://localhost:8081"
+												},
+												{
+													"key": "Vary",
+													"value": "Origin"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "227"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"e3-Bc57AO2PKyn8Xj0r+alGRrVWuFQ\""
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"result\": \"success\",\n    \"json\": {\n        \"token_type\": \"Bearer\",\n        \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MDgyODMxMDcuMzI4LCJleHAiOjE2MDgyOTM5MDcuMzI4fQ.7nz5X06Veq8CWGv7yuIprtbwNEr2zKOz5m2JjRhfXdM\",\n        \"expires_in\": 10800\n    }\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
